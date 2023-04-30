@@ -1,0 +1,15 @@
+.statistics__item {
+  width: 60px;
+  padding: 10px;
+  color: #fff;
+}
+.statistics__label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 12px;
+  line-height: 1.33;
+}
+.statistics__percentage {
+  font-size: 18px;
+  line-height: 1.33;
+}

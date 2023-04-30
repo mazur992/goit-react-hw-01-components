@@ -1,12 +1,12 @@
-import user from '../path/to/user.json';
-import data from '../path/to/data.json';
-import friends from '../path/to/friends.json';
-import transactions from '../path/to/transactions.json';
+import User from './User/User';
+import FriendList from './FriendList/FriendList';
+import TransactionHistory from './TransactionHistory/TransactionHistory';
+import Statistics from './Statistics/Statistics';
 
-import User from './User';
-import Statistic from './Statistics';
-import FriendList from './FriendList';
-import TransactionHistory from './TransactionHistory';
+import user from '../path/user.json';
+import friends from '../path/friends.json';
+import transactions from '../path/transactions.json';
+import css from './App.module.css';
 
 export const App = () => {
   return (
@@ -20,15 +20,9 @@ export const App = () => {
         views={user.stats.views}
         likes={user.stats.likes}
       />
-      <section className="statistics">
-        <h2 className="title">Upload stats</h2>
-        <ul className="stat-list">
-          {data.map(d => (
-            <Statistic key={d.id} label={d.label} percentage={d.percentage} />
-          ))}
-        </ul>
-      </section>
-      <ul className="friend-list">
+      <Statistics />
+
+      <ul className={css.friendList}>
         {friends.map(friend => (
           <FriendList
             key={friend.id}
@@ -38,12 +32,12 @@ export const App = () => {
           />
         ))}
       </ul>
-      <table className="transaction-history">
+      <table className={css.transactionHistory}>
         <thead>
-          <tr>
-            <th>Type</th>
-            <th>Amount</th>
-            <th>Currency</th>
+          <tr className={css.transactionHistory__header}>
+            <th className={css.transactionHistory__item}>Type</th>
+            <th className={css.transactionHistory__item}>Amount</th>
+            <th className={css.transactionHistory__item}>Currency</th>
           </tr>
         </thead>
 
