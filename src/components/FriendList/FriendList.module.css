@@ -1,3 +1,6 @@
+.friendList {
+  margin-top: 50px;
+}
 .friendList__item {
   width: 250px;
   display: flex;
